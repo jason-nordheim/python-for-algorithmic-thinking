@@ -183,3 +183,64 @@ Why?
 
 1. Because we are making the optimal choice relative to local execution
 2. We do **not** revisit the choices after they have been made
+
+## Decrease & Conquer vs Divide & Conquer
+
+**Decrease and Conquer** is a computational problem-solving technique in which a problem is reduced into a smaller problem which is easier to solve.
+
+This is not the same as **divide and conquer**
+
+**Divide and Conquer** is a computational problem-solving technique in which a problem is broken into multiple smaller problems which are easier to solve.
+
+The essence: At each step of the algorithm, the problem is reduced into a smaller version of the same problem, until a solution is found (or found to be impossible)
+
+Classic Examples of _decrease and conquer_:
+
+- Binary search
+- Euclid's algorithm (finding the greatest common denominator of 2 integers)
+- Depth-first search
+- Breadth-first search
+- Insertion sort
+- Selection sort
+
+Types of Decrease & Conquer Algorithms:
+
+- Decrease by a constant:
+  - insertion sort
+  - depth-first search
+  - breadth-first search
+- Decrease by a factor: (typically a factor of 2)
+  - binary search
+  - fake-coin detection problems
+  - "russian peasant multiplication"
+- Decrease by a variable:
+  - Euclid's algorithm (because the amount decreases depending on the values given)
+
+### Binary Search
+
+Binary search is an example of a **decrease and sort** algorithm. Typically binary search receives sorted data (smallest to largest).
+
+Components:
+
+- list (array) of ordered values
+- Low pointer
+- High pointer
+
+Description:
+
+- High pointer initialized to the first item in the list (smallest)
+- Low pointer initialized to the last item in the list (largest)
+- With each loop, calculate the midpoint between the high-pointer and the low-pointer
+  - review the midpoint value.
+  - if the value is not our target, we reduce the scope of the next iteration to only include either:
+    - the first half (e.g. low-pointer to mid-point)
+    - the second half (e.g. mid-point to high-pointer)
+- repeat loop until midpoint is our target value
+
+Efficiency:
+
+- Best case: `O(n(log n))`
+
+Use-case:
+
+- when the data will be searched multiple times
